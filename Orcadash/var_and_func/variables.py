@@ -1,10 +1,3 @@
-file_paths = [
-    #r"C:\Users\Admin\Desktop\Dyneema_rope_analysis\Case01_1in20_K5_Dyneema.sim",
-    #r"C:\Users\Admin\Desktop\Dyneema_rope_analysis\Case01_1in20_K5_Nylon&HSPP.sim",
-    r"C:\Users\MK\Desktop\Orcaflex 9.7\Orcaflex Examples\C Moorings\C05 Single Point Mooring\C05 Single Point Mooring.sim",
-    #r"C:\Users\MK\Desktop\Orcaflex 9.7\Orcaflex Examples\C Moorings\C07 Metocean Buoy in Deep Water\C07 Metocean Buoy in Deep Water.sim",
-    r"C:\Users\MK\Desktop\Orcaflex 9.7\Orcaflex Examples\C Moorings\C07 Metocean Buoy in Deep Water\C07 Metocean Buoy in Deep Water.sim"
-]
 Range_Graph_variable_dict = {
     "Position": ["X", "Y", "Z", "Expansion Factor"],
     "Motions": ["Velocity", "GX-Velocity", "GY-Velocity", "GZ-Velocity", "Acceleration", "GX-Acceleration", "GY-Acceleration", "GZ-Acceleration", "Acceleration rel. g", "x-Acceleration rel. g", "y-Acceleration rel. g", "z-Acceleration rel. g"],
