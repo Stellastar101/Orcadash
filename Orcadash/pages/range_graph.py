@@ -23,32 +23,22 @@ from var_and_func.functions import get_line_names, extract_multiple_lines_data
 LOGO_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'Orcadash.png')
 
 # Initial state
-initial_state = {
-    "file_paths": [],
-    "selected_files": [],
-    "lines": [],
-    "lines_lov": [],
-    "variable_category": list(variables_dict.keys()),
-    "selected_category": list(variables_dict.keys())[0],
-    "variable": "",
-    "variable_lov": [],
-    "extracted_data": pd.DataFrame(),
-    "data_available": False,
-    "selected_statistic": "mean",
-    "figure": go.Figure(),
-    "table_columns": [],
-    "is_loading": False,
-    "plot_mode": "lines+markers",
-    "chart_title": "Range Graph"
-}
-
-def on_init(state: State):
-    """Initialize the app state."""
-    for key, value in initial_state.items():
-        setattr(state, key, value)
-    update_variable_lov(state)
-    if MOCK_MODE:
-        notify(state, "info", "Running in mock mode. OrcFxAPI not found.")
+file_paths = []
+selected_files = []
+lines = []
+lines_lov = []
+variable_category = list(variables_dict.keys())
+selected_category = list(variables_dict.keys())[0]
+variable = ""
+variable_lov = []
+extracted_data = pd.DataFrame()
+data_available = False
+selected_statistic = "mean"
+figure = go.Figure()
+table_columns = []
+is_loading = False
+plot_mode = "lines+markers"
+chart_title = "Range Graph"
 
 def update_variable_lov(state: State):
     """Update the variable list based on the selected category."""
@@ -233,7 +223,10 @@ with tgb.Page() as page:
 
 if __name__ == "__main__":
     gui = Gui(page=page)
-    gui.on_init = on_init
+    #gui.on_init = on_init
+    update_variable_lov(gui)
+    if MOCK_MODE:
+        notify(gui, "info", "Running in mock mode. OrcFxAPI not found.")
     gui.run(
         title="OrcaFlex Data Visualizer",
         dark_mode=True,
